@@ -29,7 +29,27 @@ Soweto now supports multiple AI providers:
 ```bash
 git clone https://github.com/YOUR_USERNAME/soweto-godmode-agent.git
 cd soweto-godmode-agent
-npm install
-cd client && npm install
-cd ../server && npm install
+npm install # Installs dependencies for both client and server workspaces
 ```
+
+### 2. Backend Setup
+
+1.  Navigate to the server directory:
+    ```bash
+    cd server
+    ```
+2.  Create a `.env` file by copying the example:
+    ```bash
+    cp .env.example .env
+    ```
+3.  Open the `.env` file and add your API keys for the desired AI providers (Jules, OpenAI). If you are using Ollama, ensure the `OLLAMA_API_URL` is correct.
+
+### 3. Running the Backend
+
+To start the backend server, run the following command from the `server` directory:
+
+```bash
+npm start
+```
+
+The server will start on port 3001 by default.
