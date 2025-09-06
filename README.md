@@ -21,6 +21,8 @@ Soweto now supports multiple AI providers:
 - Digital automation (browser, API, pipelines, CI/CD)
 - Proactive optimization and self-starting conversations
 - Flexible choice of AI provider via simple configuration
+- Dynamic provider priority and fallback (Jules, OpenAI, Gemini, Groq, OpenRouter, Ollama)
+- SQLite-based caching for faster responses and reduced API costs
 
 ## Quickstart
 
@@ -42,7 +44,9 @@ npm install # Installs dependencies for both client and server workspaces
     ```bash
     cp .env.example .env
     ```
-3.  Open the `.env` file and add your API keys for the desired AI providers (Jules, OpenAI). If you are using Ollama, ensure the `OLLAMA_API_URL` is correct.
+3.  Open the `.env` file and add your API keys for the desired AI providers (Jules, OpenAI, Gemini, Groq, OpenRouter).
+4.  Optionally, customize the provider order by editing the `AI_PRIORITY` variable. The server will attempt to use providers in this order, falling back to the next one if a call fails.
+5.  If you are using Ollama, ensure the `OLLAMA_API_URL` is correct.
 
 ### 3. Running the Backend
 

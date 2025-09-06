@@ -2,6 +2,10 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const aiService = require('./aiService');
+const cacheService = require('./cacheService');
+
+// Initialize services
+cacheService.init();
 
 const app = express();
 const port = process.env.PORT || 3001;
